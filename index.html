@@ -1,0 +1,91 @@
+<!DOCTYPE html> <!-- Define que o documento é um arquivo HTML5 -->
+<html lang="pt-BR"> <!-- Define o idioma principal da página como português do Brasil -->
+<head>
+  <meta charset="UTF-8" /> <!-- Define a codificação de caracteres como UTF-8 (suporta acentuação) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsividade em dispositivos móveis -->
+  <title>MindCare — Agendamento Psicológico</title> <!-- Título exibido na aba do navegador -->
+  <link rel="stylesheet" href="style.css" /> <!-- Importa o arquivo de estilos CSS externo -->
+</head>
+
+<body> <!-- Início do corpo visível da página -->
+
+  <header> <!-- Cabeçalho fixo do site -->
+    <h1 class="site-title"> <!-- Nome/marca do site: substituído por logo -->
+      <a href="/" class="logo-link">
+        <img src="logo1.png" alt="MindCare — logo" class="logo">
+      </a>
+    </h1>
+    <nav> <!-- Menu de navegação -->
+      <a href="#profissionais">Profissionais</a> <!-- Link para a seção de profissionais -->
+      <a href="#agendamento">Agendar</a> <!-- Link para a seção de agendamento -->
+    </nav>
+  </header>
+
+  <section class="hero"> <!-- Seção principal de destaque (banner inicial) -->
+    <div class="hero-text"> <!-- Container de texto dentro do banner -->
+      <h2>Cuidar da mente é um ato de amor</h2> <!-- Frase de impacto principal -->
+      <p>Agende sua sessão com psicólogos qualificados e tenha uma vida mais equilibrada.</p> <!-- Subtítulo/descrição -->
+      <a href="#agendamento" class="botao">Agendar Agora</a> <!-- Botão que leva direto ao formulário -->
+    </div>
+  </section>
+
+  <section id="profissionais"> <!-- Seção que lista os psicólogos disponíveis -->
+    <h3>Profissionais Disponíveis</h3> <!-- Título da seção -->
+    <!-- Conteúdo estático/fallback: será substituído pelo JavaScript quando ativado -->
+    <div class="cards" id="lista-profissionais">
+      <div class="card">
+        <img src="cristiana.jpeg" alt="Dra. Ana Souza" class="card-img" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 140 140%27><rect width=%27100%25%27 height=%27100%25%27 fill=%27%23e6e6e6%27/><text x=%2750%25%27 y=%2750%25%27 dy=%27.35em%27 text-anchor=%27middle%27 font-family=%27Arial%27 font-size=%2714%27 fill=%27%23666%27>Sem%20imagem</text></svg>'">
+        <h4>Dra. Julia Clara</h4>
+        <p>Terapia Cognitivo-Comportamental</p>
+        <span>💰 R$ 200</span>
+      </div>
+      <div class="card">
+        <img src="maria.jpeg" alt="Dr. Pedro Lima" class="card-img" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 140 140%27><rect width=%27100%25%27 height=%27100%25%27 fill=%27%23e6e6e6%27/><text x=%2750%25%27 y=%2750%25%27 dy=%27.35em%27 text-anchor=%27middle%27 font-family=%27Arial%27 font-size=%2714%27 fill=%27%23666%27>Sem%20imagem</text></svg>'">
+        <h4>Dr. maria</h4>
+        <p>Psicanálise</p>
+        <span>💰 R$ 250</span>
+      </div>
+      <div class="card">
+        <img src="julia.jpeg" alt="Dra. Júlia Andrade" class="card-img" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 140 140%27><rect width=%27100%25%27 height=%27100%25%27 fill=%27%23e6e6e6%27/><text x=%2750%25%27 y=%2750%25%27 dy=%27.35em%27 text-anchor=%27middle%27 font-family=%27Arial%27 font-size=%2714%27 fill=%27%23666%27>Sem%20imagem</text></svg>'">
+        <h4>Dra. Júlia Andrade</h4>
+        <p>Terapia Familiar</p>
+        <span>💰 R$ 220</span>
+      </div>
+      <div class="card">
+        <img src="pedro.webp" alt="Dr. Lucas Silva" class="card-img" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 140 140%27><rect width=%27100%25%27 height=%27100%25%27 fill=%27%23e6e6e6%27/><text x=%2750%25%27 y=%2750%25%27 dy=%27.35em%27 text-anchor=%27middle%27 font-family=%27Arial%27 font-size=%2714%27 fill=%27%23666%27>Sem%20imagem</text></svg>'">
+        <h4>Dr. Pedro</h4>
+        <p>Terapia Infantil</p>
+        <span>💰 R$ 210</span>
+      </div>
+    </div> <!-- Container onde os cards dos profissionais serão inseridos via JavaScript -->
+  </section>
+
+  <section id="agendamento"> <!-- Seção do formulário de agendamento -->
+    <h3>Agende sua Sessão</h3> <!-- Título da seção -->
+    <form id="form-agendamento"> <!-- Formulário para o usuário preencher -->
+      <input type="text" name="nome" placeholder="Seu nome" required> <!-- Campo de texto para nome -->
+      <input type="email" name="email" placeholder="Seu e-mail" required> <!-- Campo de e-mail -->
+      <select name="profissional" id="select-profissional" required> <!-- Lista suspensa com profissionais (preenchida via JS) -->
+        <option value="">Selecione o profissional</option> <!-- Opção padrão inicial -->
+        <!-- Opções estáticas (fallback) -->
+        <option value="0">Dra. Ana Souza — Terapia Cognitivo-Comportamental</option>
+        <option value="1">Dr. Pedro Lima — Psicanálise</option>
+        <option value="2">Dra. Júlia Andrade — Terapia Familiar</option>
+        <option value="3">Dr. Lucas Silva — Terapia Infantil</option>
+      </select>
+      <input type="date" name="data" required> <!-- Campo para selecionar a data -->
+      <input type="time" name="hora" required> <!-- Campo para selecionar o horário -->
+      <textarea name="observacoes" rows="3" placeholder="Observações (opcional)"></textarea> <!-- Campo de texto livre para observações -->
+      <button type="submit" class="botao">Confirmar Agendamento</button> <!-- Botão para enviar o formulário -->
+    </form>
+    <p id="mensagem"></p> <!-- Parágrafo onde será exibida a mensagem de confirmação ou erro -->
+  </section>
+
+  <footer> <!-- Rodapé da página -->
+    <p>© 2025 MindCare — Sua saúde mental em boas mãos</p> <!-- Texto de direitos autorais -->
+  </footer>
+
+  <script src="script.js"></script> <!-- Importa o arquivo JavaScript que controla a interatividade -->
+</body>
+</html> <!-- Fim do documento HTML -->
+
