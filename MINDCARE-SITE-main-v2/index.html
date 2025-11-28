@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindCare — Agendamento Psicológico</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header>
+    <h1 class="site-title">
+      <a href="/" class="logo-link">
+        <img src="logo1.png" alt="MindCare — logo" class="logo">
+      </a>
+    </h1>
+    <nav>
+      <a href="#profissionais">Profissionais</a>
+      <a href="#agendamento">Agendar</a>
+      <a href="#meus-agendamentos">Meus Agendamentos</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Cuidar da mente é um ato de amor</h2>
+      <p>Agende sua sessão com psicólogos qualificados e tenha uma vida mais equilibrada.</p>
+      <a href="#agendamento" class="botao">Agendar Agora</a>
+    </div>
+  </section>
+
+  <!-- Seção de Perfil Detalhado (inicialmente oculta) -->
+  <section id="perfil-detalhes" style="display: none;"></section>
+
+  <section id="profissionais">
+    <h3>Profissionais Disponíveis</h3>
+    <div class="cards" id="lista-profissionais">
+      <!-- Conteúdo será carregado via JavaScript -->
+      <div class="card">
+        <img src="cristiana.jpeg" alt="Dra. Ana Souza" class="card-img" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 140 140%27><rect width=%27100%25%27 height=%27100%25%27 fill=%27%23e6e6e6%27/><text x=%2750%25%27 y=%2750%25%27 dy=%27.35em%27 text-anchor=%27middle%27 font-family=%27Arial%27 font-size=%2714%27 fill=%27%23666%27>Sem%20imagem</text></svg>'">
+        <h4>Dra. Julia Clara</h4>
+        <p>Terapia Cognitivo-Comportamental</p>
+        <span>💰 R$ 200</span>
+      </div>
+      <div class="card">
+        <img src="maria.jpeg" alt="Dr. Pedro Lima" class="card-img" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 140 140%27><rect width=%27100%25%27 height=%27100%25%27 fill=%27%23e6e6e6%27/><text x=%2750%25%27 y=%2750%25%27 dy=%27.35em%27 text-anchor=%27middle%27 font-family=%27Arial%27 font-size=%2714%27 fill=%27%23666%27>Sem%20imagem</text></svg>'">
+        <h4>Dr. maria</h4>
+        <p>Psicanálise</p>
+        <span>💰 R$ 250</span>
+      </div>
+      <div class="card">
+        <img src="julia.jpeg" alt="Dra. Júlia Andrade" class="card-img" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 140 140%27><rect width=%27100%25%27 height=%27100%25%27 fill=%27%23e6e6e6%27/><text x=%2750%25%27 y=%2750%25%27 dy=%27.35em%27 text-anchor=%27middle%27 font-family=%27Arial%27 font-size=%2714%27 fill=%27%23666%27>Sem%20imagem</text></svg>'">
+        <h4>Dra. Júlia Andrade</h4>
+        <p>Terapia Familiar</p>
+        <span>💰 R$ 220</span>
+      </div>
+      <div class="card">
+        <img src="pedro.webp" alt="Dr. Lucas Silva" class="card-img" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 140 140%27><rect width=%27100%25%27 height=%27100%25%27 fill=%27%23e6e6e6%27/><text x=%2750%25%27 y=%2750%25%27 dy=%27.35em%27 text-anchor=%27middle%27 font-family=%27Arial%27 font-size=%2714%27 fill=%27%23666%27>Sem%20imagem</text></svg>'">
+        <h4>Dr. Pedro</h4>
+        <p>Terapia Infantil</p>
+        <span>💰 R$ 210</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="agendamento">
+    <h3>Agende sua Sessão</h3>
+    <form id="form-agendamento">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <select name="profissional" id="select-profissional" required>
+        <option value="">Selecione o profissional</option>
+      </select>
+      <input type="date" name="data" required>
+      <input type="time" name="hora" required>
+      <textarea name="observacoes" rows="3" placeholder="Observações (opcional)"></textarea>
+      <button type="submit" class="botao">Confirmar Agendamento</button>
+    </form>
+    <p id="mensagem"></p>
+  </section>
+
+  <section id="meus-agendamentos">
+    <h3>Meus Agendamentos</h3>
+    <p id="mensagem-agendamentos"></p>
+    <div id="lista-agendamentos" class="cards">
+      <!-- Agendamentos serão carregados via JavaScript -->
+    </div>
+    <button onclick="limparTodosAgendamentos()" class="botao botao-limpar-todos">
+      🗑️ Limpar Todos os Agendamentos
+    </button>
+  </section>
+
+  <footer>
+    <p>© 2025 MindCare — Sua saúde mental em boas mãos</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
